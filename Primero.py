@@ -26,7 +26,7 @@ class Primero(QtGui.QDialog):
     def Ortografia(self):
         marcado = True
     def Cuentapalabras(self):
-        total = len(self.archivo.split(" "))
+        total = len(self.archivo.split(" ",","))
         tpalabras=total
         tpalabras=str(tpalabras)
         self.ui.palabras.setText(tpalabras)
