@@ -4,7 +4,7 @@ import tkFileDialog
 from Menu import *
 
 class Primero(QtGui.QDialog):
-    global archivo
+    archivo = ""
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self,parent)
         self.ui =Ui_Dialog()
@@ -15,7 +15,7 @@ class Primero(QtGui.QDialog):
 
 
     def Errores(self):
-        texto = open(archivo,'r')
+        texto = open(self.archivo)
         chkr = SpellChecker("es_ES")
         chkr.set_text(texto.readline())
         for err in chkr:
@@ -24,10 +24,10 @@ class Primero(QtGui.QDialog):
     def Ortografia(self):
         marcado = True
     def Cuentapalabras(self):
-        total = len(archivo.split(" "))
+        total = len(self.archivo.split(" "))
     def Abrir(self):
         archivo = tkFileDialog.askopenfilename()
-        texto = open(archivo,'r')
+        texto = open(archivo)
 
         self.ui.textBrowser.setText(texto.readline())
 if __name__ == "__main__":
