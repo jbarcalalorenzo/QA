@@ -35,6 +35,8 @@ class Primero(QtGui.QDialog):
 
     def Abrir(self):
         self.archivo = tkFileDialog.askopenfilename()
+        ruta=str(self.archivo)
+        self.ui.lineEdit.setText(ruta)
         texto = open(self.archivo, 'r')
         self.ui.textBrowser.setText(texto.readline())
 
