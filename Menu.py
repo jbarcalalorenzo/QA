@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Menu.ui'
 #
-# Created: Sun Oct 05 01:19:24 2014
+# Created: Sun Oct 05 02:53:47 2014
 #      by: PyQt4 UI code generator 4.11.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -56,6 +56,13 @@ class Ui_Dialog(object):
         self.lineEdit = QtGui.QLineEdit(Dialog)
         self.lineEdit.setGeometry(QtCore.QRect(20, 20, 561, 20))
         self.lineEdit.setObjectName(_fromUtf8("lineEdit"))
+        self.label_2 = QtGui.QLabel(Dialog)
+        self.label_2.setGeometry(QtCore.QRect(620, 70, 101, 16))
+        self.label_2.setObjectName(_fromUtf8("label_2"))
+        self.errores = QtGui.QLabel(Dialog)
+        self.errores.setGeometry(QtCore.QRect(720, 70, 46, 13))
+        self.errores.setText(_fromUtf8(""))
+        self.errores.setObjectName(_fromUtf8("errores"))
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -67,4 +74,5 @@ class Ui_Dialog(object):
         self.pushButton.setText(_translate("Dialog", "Validar", None))
         self.label.setText(_translate("Dialog", "Número de Palabras :", None))
         self.toolButton.setText(_translate("Dialog", "...", None))
+        self.label_2.setText(_translate("Dialog", "Número de Errores:", None))
 
