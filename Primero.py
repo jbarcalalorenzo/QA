@@ -10,24 +10,29 @@ class Primero(QtGui.QDialog):
         self.ui =Ui_Dialog()
         self.ui.setupUi(self)
         QtCore.QObject.connect(self.ui.toolButton,QtCore.SIGNAL('clicked()'),self.Abrir)
-        QtCore.QObject.connect(self.ui.pushButton,QtCore.SIGNAL('clicked()'),self.Errores)
+        QtCore.QObject.connect(self.ui.pushButton,QtCore.SIGNAL('clicked()'),self.Cuentapalabras)
         QtCore.QObject.connect(self.ui.checkBox,QtCore.SIGNAL('clicked()'),self.Ortografia)
 
 
     def Errores(self):
-        texto = open(self.archivo)
+        terrores = 0
+        texto = open(self.archivo, 'r')
         chkr = SpellChecker("es_ES")
         chkr.set_text(texto.readline())
         for err in chkr:
-         tpalabras= tpalabras+1
+         terrores= terrores+1
+        tpalabras=str(terrores)
         self.ui.palabras.setText(tpalabras)
     def Ortografia(self):
         marcado = True
     def Cuentapalabras(self):
         total = len(self.archivo.split(" "))
+        tpalabras=total
+        tpalabras=str(tpalabras)
+        self.ui.palabras.setText(tpalabras)
     def Abrir(self):
-        archivo = tkFileDialog.askopenfilename()
-        texto = open(archivo)
+        self.archivo = tkFileDialog.askopenfilename()
+        texto = open(self.archivo, 'r')
 
         self.ui.textBrowser.setText(texto.readline())
 if __name__ == "__main__":
