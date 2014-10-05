@@ -19,12 +19,16 @@ class Primero(QtGui.QDialog):
         chkr = SpellChecker("es_ES")
         chkr.set_text(texto.readline())
         for err in chkr:
-         terrores= terrores+1
-        tpalabras=str(terrores)
-        self.ui.palabras.setText(tpalabras)
+         terrores+=1
+        terrores=str(terrores)
+        self.ui.errores.setText(terrores)
 
     def Cuentapalabras(self):
-        total = len(self.archivo.split(" ",","))
+        tpalabras=None
+        total=0
+        texto = open(self.archivo, 'r')
+        text= texto.readline()
+        total = len(text.split(" "))
         tpalabras=total
         tpalabras=str(tpalabras)
         self.ui.palabras.setText(tpalabras)
