@@ -1,5 +1,6 @@
 from enchant.checker import SpellChecker
 import sys
+import decimal
 import tkFileDialog
 from Menu import *
 
@@ -12,6 +13,21 @@ class Primero(QtGui.QDialog):
         self.ui.setupUi(self)
         QtCore.QObject.connect(self.ui.toolButton,QtCore.SIGNAL('clicked()'),self.Abrir)
         QtCore.QObject.connect(self.ui.pushButton,QtCore.SIGNAL('clicked()'),self.Validar)
+
+    def TotalKeyword(self,SKeyword):
+        tkeyword = 0
+        texto = open(self.archivo, 'r')
+        text = texto.readline()
+        lista = text.split(" ")
+        total = len(text.split(" "))
+        for err in lista:
+            if err == SKeyword:
+               tkeyword+=1
+        tempo = decimal.Decimal(tkeyword)/decimal.Decimal(total)
+        pkeyword = int(tempo*100)
+        pkeyword=str(pkeyword)
+        pkeyword+="%"
+        return  pkeyword
 
     def Errores(self):
         terrores = 0
@@ -43,6 +59,10 @@ class Primero(QtGui.QDialog):
     def Validar(self):
         self.Errores()
         self.Cuentapalabras()
+        keyword = self.ui.skeyword.text()
+        pkey=self.TotalKeyword(keyword)
+        self.ui.pkeyword.setText(pkey)
+
 if __name__ == "__main__":
     app=QtGui.QApplication(sys.argv)
     myapp=Primero()

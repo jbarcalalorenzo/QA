@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Menu.ui'
 #
-# Created: Sun Oct 05 20:30:25 2014
+# Created: Sun Oct 05 21:46:17 2014
 #      by: PyQt4 UI code generator 4.11.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -57,9 +57,6 @@ class Ui_Dialog(object):
         self.errores.setGeometry(QtCore.QRect(720, 70, 46, 13))
         self.errores.setText(_fromUtf8(""))
         self.errores.setObjectName(_fromUtf8("errores"))
-        self.skeyword = QtGui.QTextEdit(Dialog)
-        self.skeyword.setGeometry(QtCore.QRect(670, 120, 104, 16))
-        self.skeyword.setObjectName(_fromUtf8("skeyword"))
         self.label_3 = QtGui.QLabel(Dialog)
         self.label_3.setGeometry(QtCore.QRect(620, 120, 51, 16))
         self.label_3.setObjectName(_fromUtf8("label_3"))
@@ -70,6 +67,9 @@ class Ui_Dialog(object):
         self.pkeyword.setGeometry(QtCore.QRect(750, 90, 46, 13))
         self.pkeyword.setText(_fromUtf8(""))
         self.pkeyword.setObjectName(_fromUtf8("pkeyword"))
+        self.skeyword = QtGui.QLineEdit(Dialog)
+        self.skeyword.setGeometry(QtCore.QRect(670, 120, 113, 20))
+        self.skeyword.setObjectName(_fromUtf8("skeyword"))
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
