@@ -2,6 +2,7 @@ from enchant.checker import SpellChecker
 import sys
 import decimal
 import tkFileDialog
+import time
 from Menu import *
 
 class Primero(QtGui.QDialog):
@@ -59,9 +60,13 @@ class Primero(QtGui.QDialog):
     def Validar(self):
         self.Errores()
         self.Cuentapalabras()
+        self.ui.progressBar.setValue(50)
+        time.sleep(2)
         keyword = self.ui.skeyword.text()
         pkey=self.TotalKeyword(keyword)
         self.ui.pkeyword.setText(pkey)
+        self.ui.progressBar.setValue(100)
+
 
 if __name__ == "__main__":
     app=QtGui.QApplication(sys.argv)
